@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>SignalR Simple Chat</title> 
+    <style type="text/css"> 
+        .container { 
+            background-color: #99CCFF; 
+            border: thick solid #808080; 
+            padding: 20px; 
+            margin: 20px; 
+        } 
+    </style> 
+</head> 
+<body> 
+
+<script type="text/javascript" src="../../Scripts/jquery-1.6.4.min.js"></script>
+<script type="text/javascript" src="../../Scripts/jquery.signalR-1.0.0-rc2.js"></script>
+<script type="text/javascript" src="/signalr/hubs"></script>
+<script type="text/javascript">
+    $(function () {
+        var connection = $.hubConnection('http://localhost:8350/');
+
+        // Declare a proxy to reference the hub.  
+        var robot = $.connection.robotSignalHub;
+        robot.client.send = function (message) {
+            $('#messageReceived').html(message);
+        };
+
+        // Start the connection. 
+        $.connection.hub.start().done(function () {
+            robot.server.register("abcd");
+            });
+        });
+</script> 
+
+<h1>Robot Page</h1>    
+<h2>Received Messages:</h2>
+<p id="messageReceived"></p>
+
+</body>
+</html>

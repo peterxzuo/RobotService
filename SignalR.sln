@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR", "SignalR\SignalR.csproj", "{1AC3C210-4127-4100-815E-51E3D538CE92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.Tests", "SignalR.Tests\SignalR.Tests.csproj", "{74D90646-25F3-43A8-9F90-95417122584E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1AC3C210-4127-4100-815E-51E3D538CE92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AC3C210-4127-4100-815E-51E3D538CE92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AC3C210-4127-4100-815E-51E3D538CE92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AC3C210-4127-4100-815E-51E3D538CE92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74D90646-25F3-43A8-9F90-95417122584E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74D90646-25F3-43A8-9F90-95417122584E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74D90646-25F3-43A8-9F90-95417122584E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74D90646-25F3-43A8-9F90-95417122584E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

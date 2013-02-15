@@ -1,0 +1,69 @@
+﻿@{
+    ViewBag.Title = "Robot Walk Controller Page";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+            <p>
+                Control remote robot using this page. Specify a robot key and use the buttons below to control it once
+                the robot was online.
+            </p>
+        </div>
+    </section>
+}
+<h3>Robot Control Page</h3>
+
+<script type="text/javascript" src="../../Scripts/jquery-1.6.4.min.js"></script>
+
+<script type="text/javascript">
+
+function walkRobot(degree, speed, distance) {
+    var robotKey = "abcd";
+    var url = "/Home/WalkRobot?" + "robotKey=" + robotKey + "&degree=" + degree + "&speed=" + speed + "&distance=" + distance;
+
+    $.ajax({
+        url: url,
+        type: 'GET',
+        success: function (message) {
+            $('#status').html(message);
+        },
+        error: function (message) {
+            $('#status').html(message);
+        }
+    });
+}
+
+function walkForward(button) {
+    $('#command').html("Walk Forward");
+    walkRobot(90, 1.0, 1.0);
+    }
+
+    function walkBackward(button) {
+        $('#command').html("Walk Backward");
+    walkRobot(-90, 1.0, 1.0);
+}
+
+function walkLeft(button) {
+    $('#command').html("Walk Left");
+    walkRobot(180, 1.0, 1.0);
+}
+
+function walkRight(button) {
+    $('#command').html("Walk Right");
+    walkRobot(0, 1.0, 1.0);
+}
+
+</script>
+
+<input type="button" id="forwardButton" value="Forward" onclick='walkForward(this)' />
+<input type="button" id="leftButton" value="Left" onclick='walkLeft(this)'/>
+<input type="button" id="rightButton" value="Right" onclick='walkRight(this)' />
+<input type="button" id="backwardButton" value="Backward" onclick='walkBackward(this)' />
+<input type="button" id="stopButton" value="Stop" onclick='stopWalk(this)'/>
+
+<p id="command"></p>
+<p id="status"></p>
