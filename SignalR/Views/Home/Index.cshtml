@@ -21,9 +21,9 @@
 
 <script type="text/javascript">
 
-function walkRobot(degree, speed, distance) {
+function walkRobot(degree, speed, distance, pan, tilt) {
     var robotKey = "abcd";
-    var url = "/Home/WalkRobot?" + "robotKey=" + robotKey + "&degree=" + degree + "&speed=" + speed + "&distance=" + distance;
+    var url = "/Home/WalkRobot?" + "robotKey=" + robotKey + "&degree=" + degree + "&speed=" + speed + "&distance=" + distance + "&pan=" + pan + "&tilt=" + tilt;
 
     $.ajax({
         url: url,
@@ -39,22 +39,22 @@ function walkRobot(degree, speed, distance) {
 
 function walkForward(button) {
     $('#command').html("Walk Forward");
-    walkRobot(90, 1.0, 1.0);
+        walkRobot(90, 1.0, 1.0, 2.0, 1.0);
     }
 
     function walkBackward(button) {
         $('#command').html("Walk Backward");
-    walkRobot(-90, 1.0, 1.0);
+        walkRobot(-90, 1.0, 1.0, 2.0, 1.0);
 }
 
 function walkLeft(button) {
     $('#command').html("Walk Left");
-    walkRobot(180, 1.0, 1.0);
+    walkRobot(180, 1.0, 1.0, 2.0, 1.0);
 }
 
 function walkRight(button) {
     $('#command').html("Walk Right");
-    walkRobot(0, 1.0, 1.0);
+    walkRobot(0, 1.0, 1.0, 2.0, 1.0);
 }
 
 </script>

@@ -17,7 +17,7 @@ namespace SignalR.Controllers
             return View();
         }
 
-        public JsonResult WalkRobot(string robotKey, string degree, string speed, string distance)
+        public JsonResult WalkRobot(string robotKey, string degree, string speed, string distance, string pan, string tilt)
         {
             // Walk Robot to certain distance
             var context = GlobalHost.ConnectionManager.GetHubContext<RobotSignalHub>();
@@ -26,7 +26,9 @@ namespace SignalR.Controllers
             {
                 Distance = double.Parse(distance),
                 Speed = double.Parse(speed),
-                Degree = double.Parse(degree)
+                Degree = double.Parse(degree),
+                Pan = double.Parse(pan),
+                Tilt = double.Parse(tilt)
             };
 
             RobotSignalHub.Walk(robotKey, robotSignal, context);
